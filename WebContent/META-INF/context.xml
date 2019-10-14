@@ -20,7 +20,7 @@
 		antiResourceLocking="false"
 		username="root"
 		password="admin"
-		url="jdbc:mysql://localhost:3306/bd_clinicaveterinaria?autoReconect=true?useTimezone=true&amp;serverTimezone=UTC"/>
+		url="jdbc:mysql://localhost:3306/bd_clinicaveterinaria?useTimezone=true&amp;serverTimezone=UTC;autoReconect=true"/>
 <!-- Classe do tomcat que está lendo esse arquivo é org.apache.tomcat.dbcp.dbcp.PoolingDataSource -->			
 <!-- POOL DE CONEXÕES -->		
 <!-- https://tomcat.apache.org/tomcat-7.8-doc/jdbc-pool.html -->
