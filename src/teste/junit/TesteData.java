@@ -14,9 +14,11 @@ public class TesteData {
 	public void testData() {
 		try {
 
-			assertEquals("14102019", DateUtils.getDateAtualReportName());
+		    assertEquals("15102019", DateUtils.getDateAtualReportName());
 			
-			assertEquals("'14-10-2019'", DateUtils.formatDateSql(Calendar.getInstance().getTime()));
+			assertEquals("'2019-10-15'", DateUtils.formatDateSql(Calendar.getInstance().getTime()));
+			
+			assertEquals("2019-10-15", DateUtils.formatDateSqlSimple(Calendar.getInstance().getTime()));
 			
 		} catch (Exception e) {
 			e.printStackTrace();

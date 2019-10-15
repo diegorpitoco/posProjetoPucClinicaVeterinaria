@@ -24,4 +24,11 @@ public class DateUtils implements Serializable{
 		retorno.append("'");
 		return retorno.toString();
 	}
+	
+	public static String formatDateSqlSimple(Date data) {
+		StringBuffer retorno = new StringBuffer();
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		retorno.append(df.format(data));
+		return retorno.toString();
+	}
 }
