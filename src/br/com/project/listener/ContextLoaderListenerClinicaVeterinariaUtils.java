@@ -7,6 +7,7 @@ import javax.faces.bean.ApplicationScoped;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+/*Utilitário para recuperar o objeto do Spring*/
 
 @ApplicationScoped
 public class ContextLoaderListenerClinicaVeterinariaUtils extends ContextLoaderListener implements Serializable {
