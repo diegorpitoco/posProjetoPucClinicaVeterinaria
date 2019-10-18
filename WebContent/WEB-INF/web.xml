@@ -5,7 +5,7 @@
 	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" metadata-complete="true" version="3.1">
-	<display-name>Projeto Pós-Puc Clinica Médica Veterinária</display-name>
+	<display-name>Projeto_Pós-Puc_Clinica_Médica_Veterinária</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
@@ -14,6 +14,13 @@
 		<session-timeout>15</session-timeout> <!-- Invalida a sessão em 15 minutos -->
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
+
+	<jsp-config>
+        <jsp-property-group>
+            <url-pattern>/**</url-pattern>
+            <el-ignored>false</el-ignored>
+        </jsp-property-group>
+</jsp-config>
 
 	<error-page>
 		<exception-type>org.springframework.security.access.AccessDeniedException</exception-type>
@@ -28,6 +35,11 @@
 	<error-page>
 		<error-code>403</error-code>
 		<location>/error/acessoNegado.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/404.jsf</location>
 	</error-page>
 	
 	<error-page>
@@ -52,7 +64,7 @@
 	
 	<context-param><!-- salvar a mudança no eclipse e já ver no navegador sem perda de tempo. -->
 		<param-name>java.faces.FACELETS_REFRESH_PERIOD</param-name>
-		<param-value>0</param-value><!-- segundos -->
+		<param-value>2</param-value><!-- segundos -->
 	</context-param>
 	
 	<context-param><!-- sufixo das extenções de páginas -->
@@ -69,6 +81,12 @@
 		<param-name>primefaces.Theme</param-name>
 		<param-value>delta</param-value>
 	</context-param>
+	
+	<filter>
+	<filter-name>PrimeFaces FileUpload Filter</filter-name>
+	<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+	</filter>
+	
 	
 	<filter-mapping><!-- para configurar o upload de arquivos -->
 		<filter-name>PrimeFaces FileUpload Filter</filter-name>
