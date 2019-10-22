@@ -25,7 +25,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
 	@Autowired
-	private jdbcTemplateImpl jdbcTemplate;
+	private JdbcTemplateImpl jdbcTemplate;
 
 	@Autowired
 	private SimpleJdbcTemplateImpl simpleJdbcTemplate;
