@@ -24,7 +24,7 @@ import br.com.framework.utils.UtilFramework;
 import br.com.project.listener.ContextLoaderListenerClinicaVeterinariaUtils;
 import br.com.project.model.classes.Entidade;
 
-@WebFilter(filterName = "ConexãoFilter")
+@WebFilter(filterName = "ConexaoFilter")
 public class FilterOpenSessionInView extends DelegatingFilterProxy implements Serializable {
 
 	private static final long serialVersionUID = 1L;
