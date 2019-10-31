@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:sec="http://www.springframework.org/security/facelets/tags"
+	xmlns:p="http://primefaces.org/ui">
+
+<sec:isAuthenticated>
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title><ui:insert name="titulo">Clinica Veterinária</ui:insert>
+		</title>
+				<h:outputScript name="primefaces.js" library="primefaces" id="jsPrime" />
+				<h:outputScript name="jquery.js" library="primefaces/jquery" id="jsJquery" />
+				<h:outputScript name="jquery-plugins.js" library="primefaces/jquery" id="jsJqueryPlugin" />
+				<h:outputScript name="jquery.cookie.js" library="javascript" id="jsJaqueryCookie" />
+				<h:outputStylesheet name="jquery-ui.css" library="primefaces/jquery/ui" id="jsJqueryUi" />
+				<h:outputStylesheet name="primefaces.css" library="primefaces" id="jdPrimeCss" />
+				<h:outputScript name="jquery.maskMoney.min.js" library="javascript" id="jsMaskMoneySistema" />
+				<h:outputScript name="jquery.maskedinput.js" library="javascript" id="jsMaskInputSistema" />
+				<h:outputScript name="scripty.js" library="javascript"id="jsScriptSistema" />
+				<h:outputScript name="jsf.js" library="javax.faces" />
+				<h:outputScript name="googlechart.js" library="javascript" />
+				<h:outputScript name="deployJava.js" library="javascript" />
+	</h:head>
+
+
+</sec:isAuthenticated>
+
+
+</html>
