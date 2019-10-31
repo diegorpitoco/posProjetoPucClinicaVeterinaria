@@ -17,38 +17,37 @@ import br.com.srv.interfaces.SrvLogin;
 @Controller
 @Scope(value = "request")
 @ManagedBean(name = "loginBeanView")
-public class LoginBeanView extends BeanManagedViewAbstract{
+public class LoginBeanView extends BeanManagedViewAbstract {
 
 	private static final long serialVersionUID = 1L;
 
 	private String username;
 	private String password;
 	
-	
 	@Resource
 	private SessionController sessionController;
 	
 	@Resource
 	private SrvLogin srvLogin;
-	
-	public void invalidar(ActionEvent actionEvent) throws Exception{
+
+	public void invalidar(ActionEvent actionEvent) throws Exception {
 		RequestContext context = RequestContext.getCurrentInstance();
 		FacesMessage message = null;
 		boolean loggedIn = false;
 		
-		if (srvLogin.autentico(getUsername(), getPassword())) {
+		if (srvLogin.autentico(getUsername(), getPassword())){
 			sessionController.invalidateSession(getUsername());
 			loggedIn = true;
-		} else {
+		}else {
 			loggedIn = false;
-			message = new FacesMessage(FacesMessage.SEVERITY_WARN,"Acesso Negado", "Login ou senha incorretos");
+			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Acesso negado", "Login ou senha incorretos");
 		}
 		
-		if(message != null) {
+		if (message != null){
 			FacesContext.getCurrentInstance().addMessage("msg", message);
 		}
 		
-		context.addCallbackParam("loggedIn", "Java avançado com jsf com primeFaces");
+		context.addCallbackParam("loggedIn", loggedIn);
 	}
 
 	public String getUsername() {
@@ -66,7 +65,5 @@ public class LoginBeanView extends BeanManagedViewAbstract{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
 }
