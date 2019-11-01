@@ -28,13 +28,6 @@ public class Entidade implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date ent_ultimoacesso;
 
-	public Date getEnt_ultimoacesso() {
-		return ent_ultimoacesso;
-	}
-
-	public void setEnt_ultimoacesso(Date ent_ultimoacesso) {
-		this.ent_ultimoacesso = ent_ultimoacesso;
-	}
 
 	public boolean getEnt_inativo() {
 		return ent_inativo;
@@ -66,5 +59,13 @@ public class Entidade implements Serializable {
 	
 	public Long getEnt_codigo() {
 		return ent_codigo;
+	}
+	
+	public Date getEnt_ultimoacesso() {
+		return ent_ultimoacesso;
+	}
+
+	public void setEnt_ultimoacesso(Date ent_ultimoacesso) {
+		this.ent_ultimoacesso = ent_ultimoacesso;
 	}
 }

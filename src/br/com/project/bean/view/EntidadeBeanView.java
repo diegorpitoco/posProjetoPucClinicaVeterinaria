@@ -11,20 +11,20 @@ import org.springframework.stereotype.Controller;
 import br.com.project.bean.geral.BeanManagedViewAbstract;
 
 @Controller
-@Scope(value = "session" )
-@ManagedBean(name= "entidadeBeanView")
+@Scope(value = "session")
+@ManagedBean(name = "entidadeBeanView")
 public class EntidadeBeanView extends BeanManagedViewAbstract{
 	
 	@Autowired
 	private ContextoBean contextoBean;
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public String getUsuarioLogadoSecurity() {
 		return contextoBean.getAuthentication().getName();
 	}
 	
-	public Date getUltimoAcesso() throws Exception{
+	public Date getUltimoAcesso() throws Exception {
 		return contextoBean.getEntidadeLogada().getEnt_ultimoacesso();
 	}
 
