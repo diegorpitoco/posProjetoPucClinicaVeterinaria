@@ -1,4 +1,4 @@
-package br.com.project.bean.geral.controller;
+package br.com.project.geral.controller;
 
 import java.util.Date;
 
@@ -14,11 +14,10 @@ import br.com.srv.interfaces.SrvEntidade;
 public class EntidadeController extends ImplementacaoCrud<Entidade> implements
 		InterfaceCrud<Entidade> {
 	
-	@Autowired
-	private SrvEntidade srvEntidade;
-
 	private static final long serialVersionUID = 1L;
 	
+	@Autowired
+	private SrvEntidade srvEntidade;
 	
 	public Entidade findUserLogado(String userLogado) throws Exception {
 		return super.findIuniqueByProperty(Entidade.class, 
