@@ -15,10 +15,11 @@ import br.com.project.bean.geral.BeanManagedViewAbstract;
 @ManagedBean(name = "entidadeBeanView")
 public class EntidadeBeanView extends BeanManagedViewAbstract{
 	
+	private static final long serialVersionUID = 1L;
+	
 	@Autowired
 	private ContextoBean contextoBean;
 
-	private static final long serialVersionUID = 1L;
 
 	public String getUsuarioLogadoSecurity() {
 		return contextoBean.getAuthentication().getName();

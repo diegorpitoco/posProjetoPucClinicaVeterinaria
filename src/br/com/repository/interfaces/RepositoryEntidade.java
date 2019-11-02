@@ -8,9 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Repository
-public interface RepositoryEntidade extends Serializable{
-
-	
+public interface RepositoryEntidade extends Serializable{	
 	
 	Date getUltimoAcessoEntidadeLogada(String name);
 	

@@ -50,32 +50,35 @@
 					})
 				</script>
 			<ui:include src="/templates/barraProgresso.xhtml" />
- 			<div id="msgError">
- 				 <p:growl id="msg" showDetail="false" sticky="true" 
- 				 redisplay="true" autoUpdate="true" life="6000"/>
- 				 <p:tooltip id="toolTipFocus" globalSelector="a, :input, :button"
- 				 showEvent="focus" hideEvent="blur"/>
- 			</div>
-			
+			<div id="msgError">
+				<p:growl id="msg" showDetail="false" sticky="true" redisplay="true"
+					autoUpdate="true" life="6000" />
+				<p:tooltip id="toolTipFocus" globalSelector="a, :input, :button"
+					showEvent="focus" hideEvent="blur" />
+			</div>
+
 			<div id="container">
-					<div id="topo">
-						<span style="position: absolute; left: 20px;top: 14px" id="spanLogo">
-							<h:graphicImage library="img" name="logoVeteriaria.png" id="looImg"
-							styleClass="bordaImagem"/>
-						</span>
-						<span id="dadoslogin">Usuário: #{entidadeBeanView.usuarioLogadoSecurity}
-							<br id="quebraUser"/>
-							Ultimo login:
-							<h:outputLabel value="#{entidadeBeanView.ultimoAcesso}"
-							id="saidaUltimoAcesso">
-							
-							
-							</h:outputLabel>
-						</span>
+				<div id="topo">
 					
-					</div>
-					</div>
-			</h:body>
+					<span style="position: absolute; left: 20px; top: 14px"
+						id="spanLogo"> <h:graphicImage library="img"
+							name="logoVeteriaria.png" id="logoImg" styleClass="bordaImagem" />
+					</span>
+					
+					 <span id="dadoslogin">Usuário:
+						#{entidadeBeanView.usuarioLogadoSecurity}
+						
+						<br id="quebraUser" />
+						Ultimo login:
+						 <h:outputLabel value="#{entidadeBeanView.ultimoAcesso}" id="saidaUltimoAcesso">
+						
+
+						</h:outputLabel>
+					</span>
+
+				</div>
+			</div>
+		</h:body>
 
 	</h:form>
 

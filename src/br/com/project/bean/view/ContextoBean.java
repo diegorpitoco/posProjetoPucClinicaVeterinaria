@@ -12,13 +12,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import br.com.project.bean.geral.controller.EntidadeController;
 import br.com.project.bean.geral.controller.SessionController;
+import br.com.project.geral.controller.EntidadeController;
 import br.com.project.model.classes.Entidade;
 
 @Scope(value = "session")
 @Component(value = "contextoBean")
-public class ContextoBean implements Serializable {
+public class ContextoBean<entidadeController> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String USER_LOGADO_SESSAO = "userLogadoSessao";
@@ -46,11 +46,12 @@ public class ContextoBean implements Serializable {
 			if (getAuthentication().isAuthenticated()){
 				entidadeController.updateUltimoAcessoUser(getAuthentication().getName());
 				entidade = entidadeController.findUserLogado(getAuthentication().getName());
-				getExternalContext().getSessionMap().put(USER_LOGADO_SESSAO, entidade);		
-				sessionController.addSession(entidade.getEnt_login(),
-						(HttpSession) getExternalContext().getSession(true));
+				getExternalContext().getSessionMap().put(USER_LOGADO_SESSAO, entidade);
+				sessionController.addSession(entidade.getEnt_login(),(HttpSession) getExternalContext().getSession(true));
+				
 			}
 		}
+		
 		return entidade;
 	}
 	
