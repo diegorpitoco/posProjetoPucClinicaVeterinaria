@@ -84,11 +84,11 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	}
 
 	@Override
-	public List<T> findList(Class<T> entidade) throws Exception {
+	public List<T> findList(Class<T> usuario) throws Exception {
 		validaSessionFactory();
 
 		StringBuilder query = new StringBuilder();
-		query.append(" select distinct(entity) from").append(entidade.getSimpleName()).append(" entity ");
+		query.append(" select distinct(entity) from").append(usuario.getSimpleName()).append(" entity ");
 
 		List<T> lista = sessionFactory.getCurrentSession().createQuery(query.toString()).list();
 
@@ -96,14 +96,14 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	}
 
 	@Override
-	public Object findById(Class<T> entidade, Long id) throws Exception {
+	public Object findById(Class<T> usuario, Long id) throws Exception {
 		validaSessionFactory();
 		Object obj = sessionFactory.getCurrentSession().load(getClass(), id);
 		return obj;
 	}
 
 	@Override
-	public T findByPorId(Class<T> entidade, Long id) throws Exception {
+	public T findByPorId(Class<T> usuario, Long id) throws Exception {
 		validaSessionFactory();
 		T obj = (T) sessionFactory.getCurrentSession().load(getClass(), id);
 		return obj;
@@ -260,12 +260,12 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 		return obj;
 	}
 
-	public T findIuniqueByProperty(Class<T> entidade, Object valor, String atributo, String condicao) throws Exception {
+	public T findIuniqueByProperty(Class<T> usuario, Object valor, String atributo, String condicao) throws Exception {
 
 		validaSessionFactory();
 
 		StringBuilder query = new StringBuilder();
-		query.append(" select entity from ").append(entidade.getSimpleName()).append(" entity where entity.")
+		query.append(" select entity from ").append(usuario.getSimpleName()).append(" entity where entity.")
 				.append(atributo).append(" ='").append(valor).append("' ").append(condicao);
 
 		T obj = (T) this.findUniqueByQueryDinamica(query.toString());

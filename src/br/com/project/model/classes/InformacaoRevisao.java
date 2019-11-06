@@ -21,15 +21,15 @@ public class InformacaoRevisao extends DefaultRevisionEntity implements Serializ
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
-	@ForeignKey(name="entidade_fk")
-	@JoinColumn(nullable=false, name="entidade")
-	private Entidade entidade;
+	@ForeignKey(name="usuario_fk")
+	@JoinColumn(nullable=false, name="usuario")
+	private Usuario usuario;
 	
-	public void setEntidade(Entidade entidade) {
-		this.entidade = entidade;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
-	public Entidade getEntidade() {
-		return entidade;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 }

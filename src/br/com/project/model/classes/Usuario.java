@@ -12,60 +12,60 @@ import org.hibernate.envers.Audited;
 
 @Audited
 @Entity
-public class Entidade implements Serializable {
+public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long ent_codigo;
+	private Long usu_codigo;
 
-	private boolean ent_inativo = false;
+	private boolean usu_inativo = false;
 	
-	private String ent_login = null;
+	private String usu_login = null;
 
-	private String ent_senha;
+	private String usu_senha;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date ent_ultimoacesso;
+	private Date usu_ultimoacesso;
 
 
-	public boolean getEnt_inativo() {
-		return ent_inativo;
+	public boolean getUsu_inativo() {
+		return usu_inativo;
 	}
 
-	public void setEnt_inativo(boolean ent_inativo) {
-		this.ent_inativo = ent_inativo;
+	public void setUsu_inativo(boolean usu_inativo) {
+		this.usu_inativo = usu_inativo;
 	}
 
-	public String getEnt_login() {
-		return ent_login;
+	public String getUsu_login() {
+		return usu_login;
 	}
 
-	public void setEnt_login(String ent_login) {
-		this.ent_login = ent_login;
+	public void setUsu_login(String usu_login) {
+		this.usu_login = usu_login;
 	}
 
-	public String getEnt_senha() {
-		return ent_senha;
+	public String getUsu_senha() {
+		return usu_senha;
 	}
 
-	public void setEnt_senha(String ent_senha) {
-		this.ent_senha = ent_senha;
+	public void setUsu_senha(String usu_senha) {
+		this.usu_senha = usu_senha;
 	}
 
-	public void setEnt_codigo(Long ent_codigo) {
-		this.ent_codigo = ent_codigo;
-	}
-	
-	public Long getEnt_codigo() {
-		return ent_codigo;
+	public void setUsu_codigo(Long usu_codigo) {
+		this.usu_codigo = usu_codigo;
 	}
 	
-	public Date getEnt_ultimoacesso() {
-		return ent_ultimoacesso;
+	public Long getUsu_codigo() {
+		return usu_codigo;
+	}
+	
+	public Date getUsu_ultimoacesso() {
+		return usu_ultimoacesso;
 	}
 
-	public void setEnt_ultimoacesso(Date ent_ultimoacesso) {
-		this.ent_ultimoacesso = ent_ultimoacesso;
+	public void setUsu_ultimoacesso(Date usu_ultimoacesso) {
+		this.usu_ultimoacesso = usu_ultimoacesso;
 	}
 }

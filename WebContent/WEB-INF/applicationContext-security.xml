@@ -61,20 +61,20 @@
 		 		<password-encoder hash="plaintext"/>
 		 		<jdbc-user-service data-source-ref="springDataSource"
 		 		
-		 		users-by-username-query="select ent_login as username,
-								        ent_senha as password,
+		 		users-by-username-query="select usu_login as username,
+								        usu_senha as password,
 								        'true' as enable
-								        from entidade 
-								        where ent_inativo = false
-								        and upper(ent_login) = upper(?)"
+								        from usuario 
+								        where usu_inativo = false
+								        and upper(usu_login) = upper(?)"
 		 		
-		 		authorities-by-username-query="select u.ent_login as username,
+		 		authorities-by-username-query="select u.usu_login as username,
 										p.esa_codigo as authority
-										from entidade u
-										join entidadeacesso p
-										on u.ent_codigo = p.ent_codigo
-										where u.ent_inativo = false
-										and upper(u.ent_login) = upper(?)"/>
+										from usuario u
+										join usuarioacesso p
+										on u.usu_codigo = p.usu_codigo
+										where u.usu_inativo = false
+										and upper(u.usu_login) = upper(?)"/>
 		 </authentication-provider>
 	</authentication-manager>
 	

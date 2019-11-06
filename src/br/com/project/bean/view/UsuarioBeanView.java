@@ -12,8 +12,8 @@ import br.com.project.bean.geral.BeanManagedViewAbstract;
 
 @Controller
 @Scope(value = "session")
-@ManagedBean(name = "entidadeBeanView")
-public class EntidadeBeanView extends BeanManagedViewAbstract{
+@ManagedBean(name = "usuarioBeanView")
+public class UsuarioBeanView extends BeanManagedViewAbstract{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -26,7 +26,7 @@ public class EntidadeBeanView extends BeanManagedViewAbstract{
 	}
 	
 	public Date getUltimoAcesso() throws Exception {
-		return contextoBean.getEntidadeLogada().getEnt_ultimoacesso();
+		return contextoBean.getUsuarioLogado().getUsu_ultimoacesso();
 	}
 
 }

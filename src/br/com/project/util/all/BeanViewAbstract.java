@@ -54,7 +54,7 @@ public abstract class BeanViewAbstract implements ActionViewPadrao {
 	}
 
 	@Override
-	public void consultarEntidade() throws Exception {
+	public void consultarUsuario() throws Exception {
 
 	}
 
@@ -64,12 +64,12 @@ public abstract class BeanViewAbstract implements ActionViewPadrao {
 	}
 
 	@Override
-	public String redirecionaNewEntidade() throws Exception {
+	public String redirecionaNewUsuario() throws Exception {
 		return null;
 	}
 
 	@Override
-	public String redirecionarFindEntidade() throws Exception {
+	public String redirecionarFindUsuario() throws Exception {
 		return null;
 	}
 

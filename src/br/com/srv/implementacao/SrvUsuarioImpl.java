@@ -5,31 +5,31 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.repository.interfaces.RepositoryEntidade;
-import br.com.srv.interfaces.SrvEntidade;
+import br.com.repository.interfaces.RepositoryUsuario;
+import br.com.srv.interfaces.SrvUsuario;
 
 @Service
-public class SrvEntidadeImpl implements SrvEntidade {
+public class SrvUsuarioImpl implements SrvUsuario {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	private RepositoryEntidade repositoryEntidade;
+	private RepositoryUsuario repositoryUsuario;
 
 	@Override
-	public Date getUltimoAcessoEntidadeLogada(String name) {
-		return repositoryEntidade.getUltimoAcessoEntidadeLogada(name);
+	public Date getUltimoAcessoUsuarioLogado(String name) {
+		return repositoryUsuario.getUltimoAcessoUsuarioLogado(name);
 	}
 
 	@Override
-	public void updateUltimoAcessoUser(String login) {
-		repositoryEntidade.updateUltimoAcessoUser(login);
+	public void updateUltimoAcessoUsuario(String login) {
+		repositoryUsuario.updateUltimoAcessoUser(login);
 		
 	}
 
 	@Override
-	public boolean existeUsuario(String ent_login) {
-		return repositoryEntidade.existeUsuario(ent_login);
+	public boolean existeUsuario(String usu_login) {
+		return repositoryUsuario.existeUsuario(usu_login);
 	}
 
 }

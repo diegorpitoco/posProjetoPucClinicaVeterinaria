@@ -24,7 +24,7 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 
 
-		<mapping class="br.com.project.model.classes.Entidade" />
+		<mapping class="br.com.project.model.classes.Usuario" />
 
 
 		<listener

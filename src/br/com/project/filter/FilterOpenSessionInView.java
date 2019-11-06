@@ -22,7 +22,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import br.com.framework.hibernate.session.HibernateUtil;
 import br.com.framework.utils.UtilFramework;
 import br.com.project.listener.ContextLoaderListenerClinicaVeterinariaUtils;
-import br.com.project.model.classes.Entidade;
+import br.com.project.model.classes.Usuario;
 
 @WebFilter(filterName="conexaoFilter")
 public class FilterOpenSessionInView extends DelegatingFilterProxy implements Serializable {
@@ -56,10 +56,10 @@ public class FilterOpenSessionInView extends DelegatingFilterProxy implements Se
 			// captura usuário que faz a operação
 			HttpServletRequest request2 = (HttpServletRequest) request;
 			HttpSession sessao = request2.getSession();
-			Entidade userLogadoSessao = (Entidade) sessao.getAttribute("userLogadoSessao");
+			Usuario userLogadoSessao = (Usuario) sessao.getAttribute("userLogadoSessao");
 			
 			if (userLogadoSessao != null){
-				UtilFramework.getThreadLocal().set(userLogadoSessao.getEnt_codigo());
+				UtilFramework.getThreadLocal().set(userLogadoSessao.getUsu_codigo());
 			}
 			
 			sf.getCurrentSession().beginTransaction();

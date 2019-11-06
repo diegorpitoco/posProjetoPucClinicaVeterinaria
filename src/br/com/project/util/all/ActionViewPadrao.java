@@ -30,13 +30,13 @@ public interface ActionViewPadrao extends Serializable {
 	
 	abstract void setarVariavelisNulas() throws Exception;
 	
-	abstract void consultarEntidade() throws Exception;
+	abstract void consultarUsuario() throws Exception;
 	
 	abstract void statusOperation(EstatusPersistencia a) throws Exception;
 	
-	abstract String redirecionaNewEntidade() throws Exception;
+	abstract String redirecionaNewUsuario() throws Exception;
 	
-	abstract String redirecionarFindEntidade() throws Exception;
+	abstract String redirecionarFindUsuario() throws Exception;
 	
 	abstract void addMsg(String Msg);
 	

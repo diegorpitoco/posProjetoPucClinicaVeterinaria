@@ -7,29 +7,29 @@ import org.springframework.stereotype.Controller;
 
 import br.com.framework.implementacao.crud.ImplementacaoCrud;
 import br.com.framework.interfac.crud.InterfaceCrud;
-import br.com.project.model.classes.Entidade;
-import br.com.srv.interfaces.SrvEntidade;
+import br.com.project.model.classes.Usuario;
+import br.com.srv.interfaces.SrvUsuario;
 
 @Controller
-public class EntidadeController extends ImplementacaoCrud<Entidade> implements
-		InterfaceCrud<Entidade> {
+public class UsuarioController extends ImplementacaoCrud<Usuario> implements
+		InterfaceCrud<Usuario> {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	private SrvEntidade srvEntidade;
+	private SrvUsuario srvUsuario;
 	
-	public Entidade findUserLogado(String userLogado) throws Exception {
-		return super.findIuniqueByProperty(Entidade.class, 
-				userLogado, "ent_login", " and entity.ent_inativo is false");
+	public Usuario findUserLogado(String userLogado) throws Exception {
+		return super.findIuniqueByProperty(Usuario.class, 
+				userLogado, "usu_login", " and entity.usu_inativo is false");
 	}
 	
-	public Date getUltimoAcessoEntidadeLogada(String login) {
-		return srvEntidade.getUltimoAcessoEntidadeLogada(login);
+	public Date getUltimoAcessoUsuarioLogado(String login) {
+		return srvUsuario.getUltimoAcessoUsuarioLogado(login);
 	}
 
-	public void updateUltimoAcessoUser(String name) {
-		srvEntidade.updateUltimoAcessoUser(name);
+	public void updateUltimoAcessoUsuario(String name) {
+		srvUsuario.updateUltimoAcessoUsuario(name);
 	}
 
 }

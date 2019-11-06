@@ -13,18 +13,18 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import br.com.project.bean.geral.controller.SessionController;
-import br.com.project.geral.controller.EntidadeController;
-import br.com.project.model.classes.Entidade;
+import br.com.project.geral.controller.UsuarioController;
+import br.com.project.model.classes.Usuario;
 
 @Scope(value = "session")
 @Component(value = "contextoBean")
-public class ContextoBean<entidadeController> implements Serializable {
+public class ContextoBean<usuarioController> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String USER_LOGADO_SESSAO = "userLogadoSessao";
 	
 	@Autowired
-	private EntidadeController entidadeController;
+	private UsuarioController usuarioController;
 	
 	@Autowired 
 	private SessionController sessionController;
@@ -37,22 +37,22 @@ public class ContextoBean<entidadeController> implements Serializable {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
 
-	public Entidade getEntidadeLogada() throws Exception{
-		Entidade entidade = (Entidade) getExternalContext().getSessionMap().get(USER_LOGADO_SESSAO);
+	public Usuario getUsuarioLogado() throws Exception{
+		Usuario usuario = (Usuario) getExternalContext().getSessionMap().get(USER_LOGADO_SESSAO);
 		
-		if (entidade == null || (entidade != null &&
-				!entidade.getEnt_login().equals(getUserPrincipal()))){
+		if (usuario == null || (usuario != null &&
+				!usuario.getUsu_login().equals(getUserPrincipal()))){
 			
 			if (getAuthentication().isAuthenticated()){
-				entidadeController.updateUltimoAcessoUser(getAuthentication().getName());
-				entidade = entidadeController.findUserLogado(getAuthentication().getName());
-				getExternalContext().getSessionMap().put(USER_LOGADO_SESSAO, entidade);
-				sessionController.addSession(entidade.getEnt_login(),(HttpSession) getExternalContext().getSession(true));
+				usuarioController.updateUltimoAcessoUsuario(getAuthentication().getName());
+				usuario = usuarioController.findUserLogado(getAuthentication().getName());
+				getExternalContext().getSessionMap().put(USER_LOGADO_SESSAO, usuario);
+				sessionController.addSession(usuario.getUsu_login(),(HttpSession) getExternalContext().getSession(true));
 				
 			}
 		}
 		
-		return entidade;
+		return usuario;
 	}
 	
 	
