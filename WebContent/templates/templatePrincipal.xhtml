@@ -40,8 +40,11 @@
 			id="cssStileSistema" />
 		<h:body>
 			<script type="text/javascript" charset="UTF-8">
-					$.noConflit();		
+					$.noConflict();		
 					localeData_pt_br();					
+					initTemplate();
+					ocultarMenu();
+					
 					
 					/*Bloqueia F5 do teclado*/
 					$(document).keydown(function(e){
@@ -156,7 +159,7 @@
 	</h:form>
 	
 	<script type="text/javascript" charset="UTF-8">
-	carregarIdElementosPagina();
+		carregarIdElementosPagina();
 	</script>
 
 
