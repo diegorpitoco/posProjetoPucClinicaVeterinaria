@@ -25,7 +25,8 @@
 
 
 		<mapping class="br.com.project.model.classes.Usuario" />
-
+		<mapping class="br.com.project.model.classes.Estado" />
+		<mapping class="br.com.project.model.classes.Cidade" />
 
 		<listener
 			class="org.hibernate.envers.event.AuditEventListener"
