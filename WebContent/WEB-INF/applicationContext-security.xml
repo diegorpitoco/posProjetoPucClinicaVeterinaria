@@ -69,7 +69,7 @@
 								        and upper(usu_login) = upper(?)"
 		 		
 		 		authorities-by-username-query="select u.usu_login as username,
-										p.esa_codigo as authority
+										p.usuacesso_codigo as authority
 										from usuario u
 										join usuarioacesso p
 										on u.usu_codigo = p.usu_codigo
