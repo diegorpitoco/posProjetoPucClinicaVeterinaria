@@ -194,8 +194,8 @@ a:focus {
 	margin-top: 4px;
 	margin-left: 9px;
 	padding: 3px 10px 6px 20px;
-	width: 68px;
-	height: 12px;
+	width: 58px;
+	height: 15px;
 	display: block;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -217,9 +217,9 @@ a:focus {
 	background-color: #F7F6F5;
 	position: absolute;
 	top: 110px;
-	width: 200px;
+	width:200px;
 	bottom: 0px;
-	left: 0px;
+	left: 5px;
 	padding-top: 5px;
 	padding-left: 5px;
 }
@@ -493,7 +493,7 @@ DESTE PONTO PARA BAIXO CSS QUE ALTERA GERAL O PRIMEFACES
 	zoom: 1;
 	cursor: pointer;
 	overflow: hidden;
-	height: 22px;
+	height: 40px;
 }
 
 .ui-datatable thead th,.ui-datatable tbody td,.ui-datatable tfoot td {
