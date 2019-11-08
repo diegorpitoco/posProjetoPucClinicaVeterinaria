@@ -26,12 +26,18 @@
 					<p:message for="cidadeNome" />	
 					
 					
+					<h:outputLabel for="estado" id="LabelEstado" value="Estado* :"/>
+					<p:selectOneMenu id="estado" required="true" style="width: 200px; height: 20px;"
+					requiredMessage="Informe o estado." value="#{cidadeBeanView.objetoSelecionado.estado}">
+						<f:selectItems value="#{estadoBeanView.estados}"/>					
+					</p:selectOneMenu>
 					
 								
 				</h:panelGrid>
 			</p:panel>
 			
 			<p:commandButton value="Salvar" ajax="false" action="#{cidadeBeanView.save}"/>
+			<p:commandButton value="Novo" ajax="false" action="#{cidadeBeanView.novo}"/>
 			
 		</h:form>
 	
