@@ -40,7 +40,7 @@ public class Cidade implements Serializable{
 	
 	@IdentificaCampoPesquisa( descricaoCampo = "Estado", campoConsulta = "estado.est_nome")
 	@Basic
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "estado", nullable = false)
 	@ForeignKey(name = "estado_fk")
 	private Estado estado = new Estado();

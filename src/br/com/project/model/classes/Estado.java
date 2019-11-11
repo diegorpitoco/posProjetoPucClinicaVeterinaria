@@ -17,6 +17,7 @@ import javax.persistence.Version;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import br.com.project.annotation.IdentificaCampoPesquisa;
 
@@ -44,7 +45,7 @@ public class Estado implements Serializable{
 	@Column(name = "versionNum")
 	private int versionNum;
 	
-	
+	@NotAudited
 	@OneToMany(mappedBy = "estado", orphanRemoval = false)
 	@Cascade(value = {org.hibernate.annotations.CascadeType.SAVE_UPDATE, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	private List<Cidade> cidades = new ArrayList<Cidade>();
@@ -113,7 +114,5 @@ public class Estado implements Serializable{
 		} else if (!est_id.equals(other.est_id))
 			return false;
 		return true;
-	}
-	
-	
+	}	
 }

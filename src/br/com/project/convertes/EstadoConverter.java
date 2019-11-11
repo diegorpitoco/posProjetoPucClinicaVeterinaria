@@ -24,9 +24,9 @@ public class EstadoConverter implements Converter, Serializable {
 	}
 
 	@Override
-	public String getAsString(FacesContext arg0, UIComponent arg1, Object object) {
-		if(object != null) {
-			Estado c = (Estado) object;
+	public String getAsString(FacesContext arg0, UIComponent arg1, Object objeto) {
+		if(objeto != null) {
+			Estado c = (Estado) objeto;
 			return c.getEst_id() != null && c.getEst_id() > 0 ? c.getEst_id().toString() : null;
 		}
 		return null;

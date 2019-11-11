@@ -22,6 +22,10 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 	
 	private Cidade objetoSelecionado = new Cidade();
 	
+	
+	@Autowired
+	private CidadeController cidadeController;
+	
 	@Override
 	public String save() throws Exception {
 		objetoSelecionado = cidadeController.merge(objetoSelecionado);
@@ -34,12 +38,9 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 		objetoSelecionado = new Cidade();
 		return url;
 	}
+		
 	
 	
-	
-	
-	@Autowired
-	private CidadeController cidadeController;
 
 	public Cidade getObjetoSelecionado() {
 		return objetoSelecionado;
