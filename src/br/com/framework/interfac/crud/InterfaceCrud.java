@@ -36,9 +36,9 @@ public interface InterfaceCrud<T> extends Serializable{
 	// carrega a lista de dados de determinada classe
 	List<T> findList(Class<T> objs) throws Exception;
 	
-	Object findById(Class<T> usuario, Long id) throws Exception;
+	Object findById(Class<T> entidade, Long id) throws Exception;
 	
-	T findByPorId(Class<T> usuario, Long id) throws Exception;
+	T findByPorId(Class<T> entidade, Long id) throws Exception;
 	
 	List<T> findListByQueryDinamica(String s) throws Exception;
 	
