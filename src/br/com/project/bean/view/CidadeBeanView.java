@@ -35,6 +35,9 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 	
 	@Override
 	public StreamedContent getArquivoReport() throws Exception {
+		super.setNomeRelatorioJasper("report_cidade");
+		super.setNomeRelatorioSaida("report_cidade");
+		super.setListDataBeanCollectionReport(cidadeController.findList(getClassImplement()));
 		return super.getArquivoReport();
 	}
 	
@@ -118,6 +121,11 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 		return urlFind;
 	}
 
+	@Override
+	public String redirecionarFindUsuario() throws Exception {
+		setarVariavelisNulas();
+		return urlFind;
+	}
 
 	@Override
 	protected InterfaceCrud<Cidade> getController() {
@@ -125,6 +133,9 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 		return cidadeController;
 	}
 	
-	
+	@Override
+	public void consultarUsuario() throws Exception {
+		super.consultarUsuario();
+	}
 
 }

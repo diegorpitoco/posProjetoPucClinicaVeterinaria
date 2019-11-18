@@ -11,11 +11,6 @@
 <ui:composition template="/templates/templatePrincipal.xhtml">
 	<ui:define name="corpo">
 	
-	<h:commandLink immediate="true">
-		<p:fileDownload value="#{cidadeBeanView.arquivoReport}"/>
-		<h:graphicImage library="img" name="pdf.png"/>
-	</h:commandLink>
-	
 		<h:form id="formCadastro" prependId="false">
 			<c:set var="isCadastro" value="true" scope="view" />
 			<p:panel header="Cadastro de Cidade" id="panelCadastro">
@@ -54,9 +49,9 @@
 				camposReload=":formTemplate:msg, tableResult"
 				botaoNovo="#{contextoBean.possuiAcesso('CIDADE_NOVO', 'ADMIN')}"
 				botaoSalvar="#{contextoBean.possuiAcesso('CIDADE_NOVO', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id == null}"
-				botaoAtualizar = "#{contextoBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id != null}">
+				botaoAtualizar="#{contextoBean.possuiAcesso('ACESSO_EDITAR', 'ADMIN') and cidadeBeanView.objetoSelecionado.cid_id != null}">
 
-
+				
 			</util:botoesCrud>
 
 
