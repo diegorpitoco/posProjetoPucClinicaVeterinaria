@@ -77,7 +77,7 @@
 						
 				
 				<p:commandButton id="buttonPesquisar" value="Filtrar" ajax="true"
-					actionListener="#{cc.attrs.managedBeanView.consultarUsuario}"
+					actionListener="#{cc.attrs.managedBeanView.consultarEntidade}"
 					process="@this,panelGridPesquisa"
 					oncomplete="addFocoAoCampo('valorPesquisa');"
 					onsuccess="addFocoAoCampo('valorPesquisa');"
@@ -90,7 +90,7 @@
 		
 		<p:spacer/>
 		
-		<p:dataTable id="tableResult" rendered="true" value=#{cc.attrs.managedBeanView.list}"
+		<p:dataTable id="tableResult" rendered="true" value="#{cc.attrs.managedBeanView.list.list}"
 		var="objeto" rows="20"
 		widgetVar="tableResult"
 		paginatorPosition="bottom"

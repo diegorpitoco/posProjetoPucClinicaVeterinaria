@@ -45,4 +45,10 @@ public class UsuarioBeanView extends BeanManagedViewAbstract{
 		return usuarioController;
 	}
 
+	@Override
+	public String condicaoAndParaPesquisa() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

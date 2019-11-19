@@ -58,7 +58,7 @@ public abstract class BeanViewAbstract implements ActionViewPadrao {
 	}
 
 	@Override
-	public void consultarUsuario() throws Exception {
+	public void consultarEntidade() throws Exception {
 
 	}
 

@@ -92,4 +92,10 @@ public class BeanReportView extends BeanViewAbstract {
 		this.nomeRelatorioSaida = nomeRelatorioSaida;
 	}
 
+	@Override
+	public void consultarEntidade() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
