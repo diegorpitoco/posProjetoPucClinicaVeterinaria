@@ -66,14 +66,14 @@ public abstract class BeanViewAbstract implements ActionViewPadrao {
 	public void statusOperation(EstatusPersistencia a) throws Exception {
 		Messagens.responseOperation(a);
 	}
-
+	
 	@Override
-	public String redirecionaNewUsuario() throws Exception {
+	public String redirecionaNewEntidade() throws Exception {
 		return null;
 	}
 
 	@Override
-	public String redirecionarFindUsuario() throws Exception {
+	public String redirecionarFindEntidade() throws Exception {
 		return null;
 	}
 

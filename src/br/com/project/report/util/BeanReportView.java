@@ -98,4 +98,10 @@ public class BeanReportView extends BeanViewAbstract {
 		
 	}
 
+	@Override
+	public String redirecionarFindUsuario() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

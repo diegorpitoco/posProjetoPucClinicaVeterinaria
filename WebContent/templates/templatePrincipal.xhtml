@@ -39,21 +39,21 @@
 		<h:outputStylesheet name="estilo.css" library="css"
 			id="cssStileSistema" />
 		<h:body>
-			<script type="text/javascript" charset="UTF-8">
-					$.noConflict();		
-					localeData_pt_br();					
-					initTemplate();
-					ocultarMenu();
-					
-					
-					/*Bloqueia F5 do teclado*/
-					$(document).keydown(function(e){
-						if (e.which == 116){
-							return 116;
-						}
-					})
-				</script>
-			<ui:include src="/templates/barraProgresso.xhtml" />
+		<script type="text/javascript" charset="UTF-8">
+ 				$.noConflict();
+ 				localeData_pt_br();
+ 				initTamplete();
+ 				ocultarMenu();
+ 				
+ 				/*Bloqueia F5 do teclado*/
+ 				$(document).keydown(function(e){
+ 					if (e.which == 116){
+ 						return 116;
+ 					}
+ 				});
+ 			</script> 
+		
+		<ui:include src="/templates/barraProgresso.xhtml" />
 			<div id="msgError">
 				<p:growl id="msg" showDetail="false" sticky="true" redisplay="true"
 					autoUpdate="true" life="6000" />
@@ -66,7 +66,8 @@
 					
 					<span style="position: absolute; left: 20px; top: 14px"
 						id="spanLogo"> <h:graphicImage library="img"
-							name="logoVeteriaria.png" id="logoImg" styleClass="bordaImagem"/>
+							name="logoVeteriaria.png" id="logoImg" styleClass="bordaImagem; width: 400px;  height: 75px;" />
+					
 					</span>
 					
 					 <span id="dadoslogin">Usuário:
@@ -136,7 +137,7 @@
 								
 									<sec:ifAnyGranted roles="CIDADE_ACESSAR, ADMIN">
 										<p:menuitem value="Cidade" id="menuCidade" immediate="true"
-										 action="#{cidadeBeanView.redirecionarFindUsuario}">
+										 action="#{cidadeBeanView.redirecionarFindEntidade}">
 											
 										</p:menuitem>									
 									</sec:ifAnyGranted>									
@@ -180,7 +181,7 @@
 		
 		// função para desabilitar a tecla F5.
 		window.onkeydown = function(e){
-			if(e.keyCode === 116 || e.keyCode ===82) {
+			if(e.keyCode === 116 || e.keyCode === 82) {
 				e.keyCode = 0;
 				e.returnValue = false;
 				return false;

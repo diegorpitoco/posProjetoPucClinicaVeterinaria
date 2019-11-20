@@ -112,13 +112,13 @@ public class CidadeBeanView extends BeanManagedViewAbstract {
 	
 	
 	@Override
-	public String redirecionaNewUsuario() throws Exception {
+	public String redirecionaNewEntidade() throws Exception {
 		setarVariavelisNulas();
 		return urlFind;
 	}
 
 	@Override
-	public String redirecionarFindUsuario() throws Exception {
+	public String redirecionarFindEntidade() throws Exception {
 		setarVariavelisNulas();
 		return urlFind;
 	}

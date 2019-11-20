@@ -6,67 +6,84 @@ var classTypeDate = 'java.util.Date';
 var classTypeBoolean = 'java.lang.Boolean';
 var classTypeBigDecimal = 'java.math.BigDecimal';
 
+
+
+/**
+ * Carrega um array global com os ids de todos os componentes da pagina Para ter
+ * faciliades em obtencao de valores dos componentes bem como trabalhar com ajax
+ */
 function carregarIdElementosPagina() {
-	arrayIdsElementsPage = new Array;
-	for (form = 0; form <= document.forms.length; form++){
-		var formAtual = document.forms[form];
-		if(formAtual != undefined){
-			for(i = 0; i< document.forms[form].elements.length; i++){
-				if(document.forms[forms].elements[i].id != ''){
-					arrayIdsElementsPage[i] = document.forms[form].elements[i].id;
-				}
-			}
-		}
-	}
+	 arrayIdsElementsPage = new Array;
+	 for (form = 0 ; form <= document.forms.length; form++){
+		 var formAtual = document.forms[form];
+		 if (formAtual != undefined) {
+			 for (i = 0; i< document.forms[form].elements.length; i++){
+				 if(document.forms[form].elements[i].id != '') {
+					 arrayIdsElementsPage[i] = document.forms[form].elements[i].id;
+				 }
+			 }	
+		 }
+	 }
 }
 
-function getValorElementPorId() {
-	carregarIdElementosPagina();
-	for (i = 0; i < arrayIdsElementsPage.length; i++) {
-		var valor = ""+ arrayIdsElementsPage[i];
-			if (valor.indexOf(id) > -1){
-				return valor;
-			}
-		}
-	return idundefined;
+
+/**
+ * Retorno o valor do id do componente dentro do documento html passando como
+ * parametro a descriï¿½ï¿½o do id declarada em jsf
+ * 
+ * @param id
+ */
+function getValorElementPorId(id) {
+	 carregarIdElementosPagina();
+	 for (i = 0; i< arrayIdsElementsPage.length; i++){
+		 var valor =  ""+arrayIdsElementsPage[i];
+		 if (valor.indexOf(id) > -1) {
+			return valor;
+	}
+  }	
+	 return idundefined;
 }
 
 
 function logout(contextPath) {
-
-var post = 'invalidar_session';
-
+	
+	var post = 'invalidar_session';
+	
 	$.ajax({
 		type:"POST",
 		url: post
-}).always(function(resposta) {
-	document.location = contextPath +'/j_spring_security_logout';
-});
+	}).always(function(resposta) { 
+		document.location = contextPath + '/j_spring_security_logout';
+	});
+	
 }
 
 
 function invalidarSession(context, pagina) {
-	document.location = (context + pagina + ".jsf")
+	document.location = (context + pagina + ".jsf");
 }
 
 function validarSenhaLogin() {
+
 	j_username = document.getElementById("j_username").value;
-	j_username = document.getElementById("j_password").value;
-	
-	if(j_username === null || j_username.trim() === ''){
-		alert("Informe o login.");
+	j_password = document.getElementById("j_password").value;
+
+	if (j_username === null || j_username.trim() === '') {
+		alert("Informe o Login.");
 		$('#j_username').focus();
 		return false;
 	}
-	
-	if(j_password === null || j_password.trim() === ''){
-		alert("Informe a senha.");
+
+	if (j_password === null || j_password.trim() === '') {
+		alert("Informe a Senha.");
 		$('#j_password').focus();
 		return false;
 	}
-	
+
 	return true;
+
 }
+
 
 function abrirMenupop() {
 	$("#menupop").show('slow').mouseleave(function() {
@@ -74,17 +91,17 @@ function abrirMenupop() {
 	});
 }
 
-
-function fecharMenupop(){
-	if($("#menupop").is(":visible")){
+function fecharMenupop() {
+	if ($("#menupop").is(":visible")){
 		$("#menupop").hide("slow");
 	}
 }
 
-function redirecionarPagina (context, pagina) {
+function redirecionarPagina(context, pagina) {
 	pagina = pagina + ".jsf";
 	document.location = context + pagina;
 }
+
 
 function localeData_pt_br() {
 	PrimeFaces.locales['pt'] = {
@@ -92,7 +109,7 @@ function localeData_pt_br() {
 		prevText : 'Anterior',
 		nextText : 'Próximo',
 		currentText : 'Começo',
-		monthNames : [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+		monthNames : [ 'Janeiro', 'Fevereiro', 'Marcio', 'Abril', 'Maio',
 				'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro',
 				'Dezembro' ],
 		monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul',
@@ -117,10 +134,10 @@ function localeData_pt_br() {
 		day : 'Dia',
 		allDayText : 'Todo o Dia'
 	};
+
 }
 
-
-function initTemplate() {
+function initTamplete() {
 	$(document).ready(function() {
 		  $('#menupop').hide();
 		  $('#barramenu').hide();
@@ -135,6 +152,7 @@ function initTemplate() {
 		  });
 		});
 	}
+
 
 function ocultarMenu() {  
 	  $('#barramenu').animate({"left":"-200px"}, "slow", function() {
@@ -161,19 +179,19 @@ function gerenciaTeclaEnter() {
 		});
 
 		$('input[type=text]').keydown(function(e) {
-			// Obter o pr󸩭o ice do elemento de entrada de texto
+			// Obter o próximo índice do elemento de entrada de texto
 			var next_idx = $('input[type=text]').index(this) + 1;
 
-			// Obter o n򭥲o de elemento de entrada de texto em um documento html
+			// Obter o número de elemento de entrada de texto em um documento html
 			var tot_idx = $('body').find('input[type=text]').length;
 
-			// Entra na tecla no c󤩧o ASCII
+			// Entra na tecla no código ASCII
 			if (e.keyCode === 13) {
 				if (tot_idx === next_idx)
-					// Vᡰara o primeiro elemento de texto
+					// Vá para o primeiro elemento de texto
 					$('input[type=text]:eq(0)').focus();
 				else
-					// Vᡰara o elemento de entrada de texto seguinte
+					// Vá para o elemento de entrada de texto seguinte
 					$('input[type=text]:eq(' + next_idx + ')').focus();
 			}
 		});
@@ -190,6 +208,7 @@ function getValorElementPorIdJQuery(id) {
 	 return idundefined;
 }
 
+
 function permitNumber(e) {
 	var unicode = e.charCode ? e.charCode : e.keyCode;
 	if (unicode != 8 && unicode != 9) {
@@ -198,6 +217,7 @@ function permitNumber(e) {
 		}
 	}
 }
+
 
 function validarCampoPesquisa(valor) {
 	if ( valor != undefined  &&  valor.value != undefined ) {
