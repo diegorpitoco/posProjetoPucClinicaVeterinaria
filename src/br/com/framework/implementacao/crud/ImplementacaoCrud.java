@@ -38,7 +38,8 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 
 	@Autowired
 	private SimpleJdbcTemplateImpl simpleJdbcTemplateImpl;
-
+	
+	
 	@Override
 	public void save(T obj) throws Exception {
 		validaSessionFactory();
@@ -158,7 +159,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	public List<?> getListSQLDinamica(String sql) throws Exception {
 		validaSessionFactory();
 		List<?> lista = sessionFactory.getCurrentSession().createSQLQuery(sql).list();
-		return null;
+		return lista;
 	}
 
 	@Override
@@ -210,7 +211,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	 * @throws Exception
 	 */
 	@Override
-	public List<T> findListByQueryDinamica(String query, int iniciaNoRegistro, int maximoResultado) {
+	public List<T> findListByQueryDinamica(String query, int iniciaNoRegistro, int maximoResultado) throws Exception {
 
 		validaSessionFactory();
 		List<T> lista = new ArrayList<T>();
@@ -228,7 +229,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 	}
 
 	private void validaTransaction() {
-		if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
+		if (!sessionFactory.getCurrentSession().getTransaction().isActive()) {
 			sessionFactory.getCurrentSession().beginTransaction();
 		}
 	}
@@ -266,7 +267,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 
 		StringBuilder query = new StringBuilder();
 		query.append(" select entity from ").append(entidade.getSimpleName()).append(" entity where entity.")
-				.append(atributo).append(" ='").append(valor).append("' ").append(condicao);
+				.append(atributo).append(" = '").append(valor).append("' ").append(condicao);
 
 		T obj = (T) this.findUniqueByQueryDinamica(query.toString());
 

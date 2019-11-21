@@ -16,7 +16,7 @@ public class CidadeController extends ImplementacaoCrud<Cidade> implements Inter
 	private static final long serialVersionUID = 1L;
 
 	@Resource
-	private SrvCidade cidade;
+	private SrvCidade srvCidade;
 	
 	@Resource
 	private RepositoryCidade repositoryCidade;

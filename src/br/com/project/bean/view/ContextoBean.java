@@ -19,7 +19,7 @@ import br.com.project.model.classes.Usuario;
 
 @Scope(value = "session")
 @Component(value = "contextoBean")
-public class ContextoBean<usuarioController> implements Serializable {
+public class ContextoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String USER_LOGADO_SESSAO = "userLogadoSessao";

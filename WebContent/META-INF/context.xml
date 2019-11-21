@@ -9,7 +9,7 @@
 				maxIdle="10" 
 				maxWait="10"
 				initialSize="10"
-				driverClassName="com.mysql.cj.jdbc.Driver"
+				driverClassName="org.postgresql.Driver"
 				validationQuery="SELECT 'OK'"
 				testWhileIdle="true"
            		testOnBorrow="true"
@@ -18,10 +18,18 @@
                 minEvictableIdleTimeMillis="60000"
 				antiJARLocking="false"
                 antiResourceLocking="false"
-				username="root" 
+				username="admin" 
 				password="admin" 
-				url="jdbc:mysql://localhost:3306/bd_clinicaveterinaria?useTimezone=true&amp;serverTimezone=UTC"/>
+				url="jdbc:postgresql://localhost:5432/bd_clinicaveterinaria?autoReconnect=true"/>
 <!-- Classe do tomcat que está lendo esse arquivo é org.apache.tomcat.dbcp.dbcp.PoolingDataSource -->				
 <!-- POOL DE CONEXÕES -->
 <!-- https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html -->
+
+
+<!-- driverClassName="com.mysql.cj.jdbc.Driver"
+
+url="jdbc:mysql://localhost:3306/bd_clinicaveterinaria?useTimezone=true&amp;serverTimezone=UTC"/>
+username="root" 
+password="admin" 
+ -->
 </Context>

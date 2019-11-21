@@ -17,7 +17,7 @@ public class ViewScopeCallbackRegistrer implements ViewMapListener {
 		return source instanceof UIViewRoot;
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")*/
 	@Override
 	public void processEvent(SystemEvent event) throws AbortProcessingException {
 		if (event instanceof PostConstructViewMapEvent) {

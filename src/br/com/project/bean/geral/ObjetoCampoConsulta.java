@@ -9,7 +9,7 @@ public class ObjetoCampoConsulta implements Serializable, Comparator<ObjetoCampo
 
 	private String descricao;
 	private String campoBanco;
-	private String tipoClass;
+	private Object tipoClass;
 	private Integer principal;
 
 	public String getDescricao() {
@@ -28,11 +28,11 @@ public class ObjetoCampoConsulta implements Serializable, Comparator<ObjetoCampo
 		this.campoBanco = campoBanco;
 	}
 
-	public String getTipoClass() {
+	public Object getTipoClass() {
 		return tipoClass;
 	}
 
-	public void setTipoClass(String tipoClass) {
+	public void setTipoClass(Object tipoClass) {
 		this.tipoClass = tipoClass;
 	}
 

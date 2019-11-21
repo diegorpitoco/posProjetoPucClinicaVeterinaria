@@ -17,12 +17,16 @@ public enum Permissao {
 	private String descricao="";
 	
 	
+	private Permissao() {
+		
+	}
 	
 	private Permissao(String name, String descricao) {
 		this.valor = name;
 		this.descricao = descricao;
 	}
 
+	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
@@ -62,12 +66,6 @@ public enum Permissao {
 	}
 	
 
-	private Permissao() {
-	
-	}
 	
 	
-	
-	
-
 }

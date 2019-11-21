@@ -10,9 +10,6 @@ import javax.servlet.http.HttpSession;
 @ApplicationScoped
 public class SessionControllerImpl implements SessionController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private HashMap<String, HttpSession> hashMap = new HashMap<String, HttpSession>();
