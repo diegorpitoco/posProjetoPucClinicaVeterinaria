@@ -15,7 +15,7 @@ function carregarIdElementosPagina() {
 	}
 }
 
-function getValorElementPorId() {
+function getValorElementPorId(id) {
 	carregarIdElementosPagina();
 	for (i = 0; i < arrayIdsElementsPage.length; i++) {
 		var valor = ""+ arrayIdsElementsPage[i];
@@ -41,12 +41,12 @@ var post = 'invalidar_session';
 
 
 function invalidarSession(context, pagina) {
-	document.location = (context + pagina + ".jsf")
+	document.location = (context + pagina + ".jsf");
 }
 
 function validarSenhaLogin() {
 	j_username = document.getElementById("j_username").value;
-	j_username = document.getElementById("j_password").value;
+	j_password = document.getElementById("j_password").value;
 	
 	if(j_username === null || j_username.trim() === ''){
 		alert("Informe o login.");

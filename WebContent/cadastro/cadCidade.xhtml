@@ -24,7 +24,6 @@
 					<p:inputText id="id" styleClass="estiloIdCadastro" disabled="true"
 						value="#{cidadeBeanView.objetoSelecionado.cid_id}" />
 					<h:outputLabel />
-
 					<h:outputLabel id="labelNomeConsultaCidade" for="cidadeNome"
 						value="Nome * :" />
 					<p:inputText id="cidadeNome" styleClass="estyleInputNome"
@@ -35,7 +34,7 @@
 
 
 					<h:outputLabel for="estado" id="LabelEstado" value="Estado* :" />
-					<p:selectOneMenu id="estado" required="true"
+					<p:selectOneMenu id="estado" required="false"
 						style="width: 200px; height: 20px;"
 						requiredMessage="Informe o estado."
 						value="#{cidadeBeanView.objetoSelecionado.estado}">
@@ -81,6 +80,11 @@
 
 		</p:dataTable>
 
+		<p:commandLink id="btnDownloadRelatorio" ajax="false" value="imprimir relatorio"  >
+        	 				
+        								 <p:fileDownload value="#{testarRelatorioBeanView.downloadRelatorio()}" />
+        						 </p:commandLink>
+		
 	</ui:define>
 </ui:composition>
 

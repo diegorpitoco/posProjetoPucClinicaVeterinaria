@@ -8,7 +8,7 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<property name="hibernate.connection.datasource">java:/comp/env/jdbc/datasource</property>
 		<!--<property name="hibernate.default_schema">bd_clinicaveterinaria</property> -->
-		<property name="hibernate.default_schema">bd_clinicaveterinaria</property>
+		<property name="hibernate.default_schema">public</property>
 		<property name="hibernate.currente_session_context_class">thread</property>
 		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 		<property name="hibernate.jdbc.factory_class">org.hibernate.jdbc.NonBatchingBatcherFactory</property>

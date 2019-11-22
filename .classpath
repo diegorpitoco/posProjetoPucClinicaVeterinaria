@@ -41,7 +41,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hsqldb-1.8.0.10.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iText-2.1.7.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-5.6.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javassist-3.12.0.GA.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.5.5.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcip-annotations-1.0.jar"/>
@@ -95,5 +94,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/start-1.0.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglib-core-0.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlbeans-1.0.3.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-6.3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-fonts-5.6.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
